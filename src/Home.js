@@ -10,13 +10,13 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
 const { width, height } = Dimensions.get('screen');
 
 const Home = ({ navigation }) => {
   return (
     <SafeAreaView>
-      <StatusBar style='auto' />
+      <StatusBar barStyle='light' backgroundColor='skyblue' />
 
       <ImageBackground
         style={{
@@ -32,7 +32,7 @@ const Home = ({ navigation }) => {
           flexDirection: 'row',
           top: 10,
           justifyContent: 'space-between',
-          paddingHorizontal: 30,
+          paddingHorizontal: 20,
           alignItems: 'center',
         }}
       >
@@ -41,13 +41,17 @@ const Home = ({ navigation }) => {
             navigation.navigate('Search');
           }}
         >
-          <Icon name='plus' size={25} color='white' />
+          <AntDesign name='plus' size={24} color='white' />
         </TouchableOpacity>
 
         <Text style={{ color: 'white', fontSize: 18 }}>Srinagar</Text>
 
         <TouchableOpacity>
-          <Icon name='ellipsis-v' size={25} color='white' />
+          <MaterialCommunityIcons
+            name='dots-vertical'
+            size={24}
+            color='white'
+          />
         </TouchableOpacity>
       </View>
     </SafeAreaView>
